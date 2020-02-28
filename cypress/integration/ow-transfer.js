@@ -18,12 +18,13 @@ describe ('checkout', ()=>{
     });
 
     it ('Selecionar um voo', ()=>{
+        cy.wait(15000);
         cy.get(':nth-child(1) > [style="display: block;"] > .css-1n2cyye > .actions > .purchase-button > .css-tmmxyl').click();
         cy.contains('Comprar agora').click();
     });
 
     it ('Login', ()=>{
-        cy.get('[data-action="payment-user-identification-email"]').type('misael.mm@gmail.com');
+        cy.get('#email').type('misael.mm@gmail.com');
         cy.contains('Avançar').click();
         cy.get('[data-action="payment-user-identification-password"]').type('max01milhas01');
         cy.contains('Avançar').click();
@@ -31,8 +32,8 @@ describe ('checkout', ()=>{
 
     it ('Preencher os dados do passageiro', ()=> {
         cy.get('[data-action="passengers-treatment"]').select('Sr.');
-        cy.get('[data-action="passengers-first-name"]').type('Teste');
-        cy.get('[data-action="passengers-last-name"]').type('Quality');
+        cy.get('[data-action="passengers-first-name"]').type('Jonas');
+        cy.get('[data-action="passengers-last-name"]').type('Carlos Magno');
         cy.get('[data-action="passengers-document-ssn"]').type('687.846.700-45');
         cy.get('[data-action="passengers-birthday"]').type('12022000');
         cy.get('[data-action="passengers-phone"]').type('31988888888');
@@ -51,7 +52,7 @@ describe ('checkout', ()=>{
         cy.get('[data-action="payment-accept-terms-conditions"]').click();
         cy.contains('Finalizar Compra').click();
         cy.get('.css-tpeh2k').type('SIM');
-        //cy.contains('Confirmar').click();
-        cy.get('[data-action="transfer-modal-click-cancel"]').click();
+        cy.contains('Confirmar').click();
+        //cy.get('[data-action="transfer-modal-click-cancel"]').click();
     });
 });
