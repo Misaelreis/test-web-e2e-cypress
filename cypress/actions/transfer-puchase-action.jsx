@@ -1,4 +1,5 @@
 class Transfer {
+
     selecionaTransferencia(){
         cy.get('[data-action="payment-transfer"]').click();
     }

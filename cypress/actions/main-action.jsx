@@ -1,5 +1,9 @@
 class Actions {
 
+    outbound_date = Cypress.moment().add(3, 'months').format("DD/MM/YYYY");
+    inbound_date = Cypress.moment().add(4, 'months').format("DD/MM/YYYY");
+    birthday_date = Cypress.moment().subtract(30, 'years').format("DDMMYYYY");
+
     visit(){
         cy.visit('');
     }
@@ -13,15 +17,15 @@ class Actions {
     
     preencherDataDeIda(){
         cy.contains('Ida').click({ force: true });
-        cy.get('#Ida_input').type("20/12/2020");
+        cy.get('#Ida_input').type(this.outbound_date);
         cy.get('[data-action="search-form-one-way"]').click();
     }
     
     preencherDataDeIdaEVolta(){
         cy.contains('Ida').click({ force: true });
-        cy.get('#Ida_input').type("20/12/2020");
+        cy.get('#Ida_input').type(this.outbound_date);
         cy.contains('Volta').click({ force: true });
-        cy.get('#Volta_input').type("30/12/2020");
+        cy.get('#Volta_input').type(this.inbound_date);
         cy.get('[data-action="search-form-flight-tab"]').click();
     }
     
@@ -52,7 +56,7 @@ class Actions {
         cy.get('[data-action="passengers-first-name"]').type('Jonas');
         cy.get('[data-action="passengers-last-name"]').type('Carlos Magno');
         cy.get('[data-action="passengers-document-ssn"]').type('687.846.700-45');
-        cy.get('[data-action="passengers-birthday"]').type('12022000');
+        cy.get('[data-action="passengers-birthday"]').type(this.birthday_date);
         cy.get('[data-action="passengers-phone"]').type('31987923527');
     }
     

@@ -1,4 +1,6 @@
 class Card {
+    birthday_date = Cypress.moment().subtract(30, 'years').format("DDMMYYYY");
+
     selecionaCartao(){
         cy.contains('MasterCard').click();
     }
@@ -13,9 +15,8 @@ class Card {
         cy.get('[data-action="payment-credit-card-cpf"]').type('81546478000');
         cy.get('[data-action="payment-credit-card-address-number"]').type('169');
         cy.get('[data-action="payment-credit-card-phone"]').type('31988875678');
-        cy.get('[data-action="payment-credit-card-birthday"]').type('21051990');
+        cy.get('[data-action="payment-credit-card-birthday"]').type(this.birthday_date);
         cy.get('[data-action="payment-credit-card-zip-code"]').type('30170050');
-        //cy.get('[data-action="payment-credit-card-address-no-number"]').click();
     }
 
     finalizarCompraCard(){
