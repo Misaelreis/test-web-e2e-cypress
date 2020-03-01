@@ -5,8 +5,8 @@ class Actions {
     }
     
     preencherOrigemEDestino(){
-        cy.get('.right').type('guarulhos');
-        cy.get('[data-action="search-form-from-sao-paulo-guarulhos-intl-br"]').click()
+        cy.get('.right').type('Recife');
+        cy.get('[data-action="search-form-from-recife-recife-br"]').click()
         cy.get('.css-zovtsq > :nth-child(3) > .css-1owni4v').type('Montevideo');
         cy.get('[data-action="search-form-to-montevideo-montevideo-uy"]').click();
     }

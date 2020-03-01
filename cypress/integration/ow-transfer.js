@@ -3,7 +3,7 @@ import Transfer from '../actions/transfer-puchase-action';
 const action = new Actions();
 const transfer = new Transfer();
 
-describe ('checkout_ow', ()=>{
+describe ('checkout-ow-transfer', ()=>{
 
     it('Preparar a home', ()=>{
         action.visit();
@@ -19,7 +19,7 @@ describe ('checkout_ow', ()=>{
         action.clicarEmPesquisar();
     });
 
-    it ('Selecionar um voo de ida', ()=>{
+    it ('Selecionar voo', ()=>{
         action.escolherVoos();
     });
 

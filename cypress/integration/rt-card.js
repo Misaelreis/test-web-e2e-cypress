@@ -4,7 +4,7 @@ import Card from '../actions/cred-card-puchase-action';
 const action = new Actions();
 const card = new Card();
 
-describe ('checkout_ow', ()=>{
+describe ('checkout-rt-card', ()=>{
 
     it('Preparar a home', ()=>{
         action.visit();
@@ -20,7 +20,7 @@ describe ('checkout_ow', ()=>{
         action.clicarEmPesquisar();
     });
 
-    it ('Selecionar um voo de ida', ()=>{
+    it ('Selecionar voos', ()=>{
         action.escolherVoos();
     });
 
