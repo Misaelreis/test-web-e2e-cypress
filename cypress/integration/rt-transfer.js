@@ -35,6 +35,6 @@ describe ('checkout-rt-transfer', ()=>{
         transfer.selecionaTransferencia();
         transfer.preencherDadosDaTransferencia();
         action.aceitarTermosECondicoes();
-        transfer.finalizarCompraTransferenciaSim();
+        //transfer.finalizarCompraTransferenciaSim();
     });
 });

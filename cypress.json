@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://www-stg.maxmilhas.com.br/",
+    "baseUrl": "https://www.maxmilhas.com.br/",
     "chromeWebSecurity": false,
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 59000
 }

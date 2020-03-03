@@ -3,7 +3,7 @@ class Actions {
     outbound_date = Cypress.moment().add(3, 'months').format("DD/MM/YYYY");
     inbound_date = Cypress.moment().add(4, 'months').format("DD/MM/YYYY");
     birthday_date = Cypress.moment().subtract(30, 'years').format("DDMMYYYY");
-
+    faker = require('faker')
     visit(){
         cy.visit('');
     }
@@ -19,6 +19,7 @@ class Actions {
         cy.contains('Ida').click({ force: true });
         cy.get('#Ida_input').type(this.outbound_date);
         cy.get('[data-action="search-form-one-way"]').click();
+        cy.wait(2000);
     }
     
     preencherDataDeIdaEVolta(){
@@ -30,7 +31,7 @@ class Actions {
     }
     
     clicarEmPesquisar(){
-        cy.get('#panel-0 > :nth-child(1) > .css-1i1s0a6 > .css-1yt4o9k > .css-k80hba > .css-538re4').click();
+        cy.get('[data-action="search-form-submit"]').click();
     }
     
     desabilitarHotel(){
@@ -53,7 +54,7 @@ class Actions {
     
     preencherDadosDoPassageiroAdulto(){
         cy.get('[data-action="passengers-treatment"]').select('Sr.');
-        cy.get('[data-action="passengers-first-name"]').type('Jonas');
+        cy.get('[data-action="passengers-first-name"]').type(this.faker.name.firstName);
         cy.get('[data-action="passengers-last-name"]').type('Carlos Magno');
         cy.get('[data-action="passengers-document-ssn"]').type('687.846.700-45');
         cy.get('[data-action="passengers-birthday"]').type(this.birthday_date);

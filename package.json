@@ -1,0 +1,21 @@
+{
+  "name": "test_cy",
+  "version": "1.0.0",
+  "description": "test_checkout",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.1.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [
+    "test",
+    "cy"
+  ],
+  "author": "Misael Reis",
+  "license": "MIT"
+}
