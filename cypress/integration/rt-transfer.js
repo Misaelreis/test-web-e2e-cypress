@@ -5,33 +5,18 @@ const transfer = new Transfer();
 
 describe ('checkout-rt-transfer', ()=>{
 
-    it('Preparar a home', ()=>{
+    beforeEach(() => {
         action.visit();
         action.desabilitarHotel();
     });
 
-    it ('Preencher os campos de origem e destino', ()=>{
+    it ('Realizar compra rt-transfer', ()=>{
         action.preencherOrigemEDestino();
-    });
-
-    it ('Preencher data de ida, volta e pesquisar', ()=>{
         action.preencherDataDeIdaEVolta();
         action.clicarEmPesquisar();
-    });
-
-    it ('Selecionar voos', ()=>{
         action.escolherVoos();
-    });
-
-    it ('Login checkout', ()=>{
         action.loginCheckout();
-    });
-
-    it ('Preencher os dados do passageiro adulto', ()=> {
         action.preencherDadosDoPassageiroAdulto();
-    });
-
-    it ('Preencher dados de transferencia',()=>{
         transfer.selecionaTransferencia();
         transfer.preencherDadosDaTransferencia();
         action.aceitarTermosECondicoes();

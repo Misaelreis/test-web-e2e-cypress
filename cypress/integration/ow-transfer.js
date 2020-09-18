@@ -5,33 +5,18 @@ const transfer = new Transfer();
 
 describe ('checkout-ow-transfer', ()=>{
 
-    it('Preparar a home', ()=>{
+    beforeEach(() => {
         action.visit();
         action.desabilitarHotel();
     });
 
-    it ('Preencher os campos de origem e destino', ()=>{
+    it ('Realizar compra ow-transfer', ()=>{
         action.preencherOrigemEDestino();
-    });
-
-    it ('Preencher data de ida e pesquisar', ()=>{
         action.preencherDataDeIda();
         action.clicarEmPesquisar();
-    });
-
-    it ('Selecionar voo', ()=>{
         action.escolherVoos();
-    });
-
-    it ('Login checkout', ()=>{
         action.loginCheckout();
-    });
-
-    it ('Preencher os dados do passageiro adulto', ()=> {
         action.preencherDadosDoPassageiroAdulto();
-    });
-
-    it ('Preencher dados de transferencia',()=>{
         transfer.selecionaTransferencia();
         transfer.preencherDadosDaTransferencia();
         action.aceitarTermosECondicoes();
